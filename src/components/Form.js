@@ -12,15 +12,20 @@ export default function Form({ onAddItem }) {
 			return;
 		}
 
+		// ! -- Generate random ID
 		const id = crypto.randomUUID();
+
+		// ! -- Create a new item
 		const newItem = {
 			description,
 			completed: false,
 			id,
 		};
 
+		// ! -- Add a new item
 		onAddItem(newItem);
 
+		// ! -- Set description back to default
 		setDescription("");
 	}
 
