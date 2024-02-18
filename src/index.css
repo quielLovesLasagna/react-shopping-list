@@ -76,9 +76,7 @@ body {
 }
 
 .statistics {
-	margin-bottom: 20px;
-	padding-bottom: 10px;
-	border-bottom: 1px solid #000;
+	margin-bottom: 10px;
 }
 
 .statistics p {
@@ -90,4 +88,13 @@ body {
 	font-family: inherit;
 	font-size: 14px;
 	margin-bottom: 10px;
+}
+
+.buttons-container {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #000;
 }

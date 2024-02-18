@@ -3,6 +3,7 @@ import Form from "./Form.js";
 import ShoppingList from "./ShoppingList.js";
 import Statistics from "./Statistics.js";
 import Sort from "./Sort.js";
+import Buttons from "./Buttons.js";
 
 export default function App() {
 	const [items, setItems] = useState([]);
@@ -25,6 +26,16 @@ export default function App() {
 	// ! -- Deletes a specific item based on item id
 	function handleDeleteItem(id) {
 		setItems((items) => items.filter((item) => item.id !== id));
+	}
+
+	// ! -- Deletes all items
+	function handleDeleteAll() {
+		setItems([]);
+	}
+
+	// ! -- Marks all items as completed
+	function handleCompleteAll() {
+		setItems((items) => items.map((item) => ({ ...item, completed: true })));
 	}
 
 	// ! -- Sorting functionality
@@ -53,6 +64,10 @@ export default function App() {
 				<>
 					<Sort sortBy={sortBy} onSort={setSortBy} />
 					<Statistics items={items} />
+					<Buttons
+						onDeleteAll={handleDeleteAll}
+						onCompleteAll={handleCompleteAll}
+					></Buttons>
 					<ShoppingList
 						items={sortedItems}
 						onToggleItem={handleToggleItem}
